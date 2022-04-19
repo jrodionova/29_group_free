@@ -1,0 +1,89 @@
+1) Посмотреть где я
+pwd
+
+2) Создать папку
+mkdir HW_1
+
+3) Зайти в папку
+cd HW_1
+
+4) Создать 3 папки
+mkdir qa_1 qa_2 qa_3
+
+5) Зайти в любую папку
+cd qa_3
+
+6) Создать 5 файлов (3 txt, 2 json) 
+touch qq1.txt qq2.txt qq3.txt сс1.json cc2.json
+
+7) Создать 3 папки 
+mkdir qc_1 qc_2 qc_3
+
+8. Вывести список содержимого папки
+ls -la
+
+9) + Открыть любой txt файл
+vim qq1.txt
+
+10) + написать туда что-нибудь, любой текст 
+//Key I
+hi
+my name is July
+i'm from Ukraine
+
+11) + сохранить и выйти 
+esc+:wq
+
+12) Выйти из папки на уровень выше
+cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+mv qa_3/qq2.txt qa_3/cc2.json qa_2
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp qa_3/qq1.txt qa_3/qq3.txt qa_1
+
+15) Найти файл по имени
+Find qa_2/qq2.txt
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+tail -f qa_1/qq1.txt
+
+17) вывести несколько первых строк из текстового файла
+head -n2 qa_1/qq1.txt
+
+18) вывести несколько последних строк из текстового файла
+tail -n2 qa_1/qq1.txt
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+less qa_1/qq1.txt
+
+20) вывести дату и время
+date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+
+curl http://162.55.220.72:5005/terminal-hw-request
+curl "http://162.55.220.72:5005/get_method?name=July&age=35"
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+
+touch myscript.sh
+vim myscript.sh
+//Key I
+    #!/bin/bash
+cd HW_1
+mkdir qa_1 qa_2 qa_3
+cd qa_3
+touch qq1.txt qq2.txt qq3.txt cc1.json cc2.json
+mkdir qc_1 qc_2 qc_3
+ls -la
+mv qq1.txt qq2.txt qc_3
+Esc
+:wq
+chmod +x ./myscript.sh
+./myscript.sh
